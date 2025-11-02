@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Style Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Live Style Editor</h1>
+        <p>Změny se propisují pomocí atributu <code>oninput="updatePreview()"</code>.</p>
+    </header>
+
+    <div class="container">
+        <form class="controls" id="style-controls">
+            <h2>Nastavení vzhledu</h2>
+            
+            <label for="cpxBarvaTextu">Barva textu:</label>
+            <input type="color" id="cpxBarvaTextu" value="black" oninput="updatePreview()">
+            
+            <label for="cpxBarvaPozadi">Barva pozadí náhledu:</label>
+            <input type="color" id="cpxBarvaPozadi" value="white" oninput="updatePreview()">
+            
+            <label for="rngVelikostTextu">Velikost písma: <span id="spnVelikostTextu">18</span>px</label>
+            <input type="range" id="rngVelikostTextu" min="10" max="40" value="18" oninput="updatePreview()">
+            
+            <label for="selFontFamily">Typ písma:</label>
+            <select id="selFontFamily" oninput="updatePreview()">
+                <option value="'Open Sans', sans-serif">Open Sans</option>
+                <option value="'Roboto Slab', serif">Roboto Slab</option>
+                <option value="Verdana, sans-serif">Verdana</option>
+                <option value="'Courier New', monospace">Courier New</option>
+            </select>
+        </form>
+
+        <div class="preview" id="divPreviewBox">
+            <h2>Ukázkový nadpis</h2>
+            <p>Tento text mění svůj vzhled v reálném čase. Používáme atribut **oninput** k volání funkce v JavaScriptu, která mění vlastnost **.style** cílového elementu.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
