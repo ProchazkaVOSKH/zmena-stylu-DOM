@@ -18,10 +18,10 @@
             <h2>Nastavení vzhledu</h2>
             
             <label for="cpxBarvaTextu">Barva textu:</label>
-            <input type="color" id="cpxBarvaTextu" value="black" oninput="updatePreview()">
+            <input type="color" id="cpxBarvaTextu" value="" oninput="updatePreview()">
             
             <label for="cpxBarvaPozadi">Barva pozadí náhledu:</label>
-            <input type="color" id="cpxBarvaPozadi" value="white" oninput="updatePreview()">
+            <input type="color" id="cpxBarvaPozadi" value="" oninput="updatePreview()">
             
             <label for="rngVelikostTextu">Velikost písma: <span id="spnVelikostTextu">18</span>px</label>
             <input type="range" id="rngVelikostTextu" min="10" max="40" value="18" oninput="updatePreview()">
@@ -33,6 +33,9 @@
                 <option value="Verdana, sans-serif">Verdana</option>
                 <option value="'Courier New', monospace">Courier New</option>
             </select>
+
+            <label for="chkShowPreview">Zobrazit náhled:</label>
+            <input type="checkbox" id="chkShowPreview" checked oninput="togglePreviewVisibility()">
         </form>
 
         <div class="preview" id="divPreviewBox">
@@ -41,6 +44,6 @@
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

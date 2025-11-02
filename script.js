@@ -5,6 +5,15 @@ const rngVelikostTextu = document.getElementById('rngVelikostTextu');
 const spnVelikostTextu = document.getElementById('spnVelikostTextu');
 const selFontFamily = document.getElementById('selFontFamily');
 const divPreviewBox = document.getElementById('divPreviewBox');
+const chkShowPreview = document.getElementById('chkShowPreview');
+
+// Nastavení výchozí barvy pozadí
+cpxBarvaPozadi.value = '#cccccc';
+divPreviewBox.style.backgroundColor = '#cccccc';
+
+// Nastavení výchozí barvy textu
+cpxBarvaTextu.value = '#000000';
+divPreviewBox.style.color = '#000000';
 
 // 2. Hlavní funkce, která aktualizuje náhled - JE VOLÁNA PŘÍMO Z HTML
 function updatePreview() {
@@ -33,7 +42,8 @@ function updatePreview() {
     spnVelikostTextu.innerText = newSize;
 }
 
-// 4. Nastavení počátečního stavu
-// Funkci zavoláme jednou při startu, abychom zajistili, že po prvním načtení 
-// jsou styly náhledu synchronizované s výchozími hodnotami inputů.
-updatePreview();
+function togglePreviewVisibility() {
+    divPreviewBox.style.display = chkShowPreview.checked ? 'block' : 'none';
+}
+
+//
